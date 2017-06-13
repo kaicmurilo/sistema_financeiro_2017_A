@@ -1,0 +1,11 @@
+package controller;
+
+public class BuscaController {
+
+	
+	public void PosicaoEstoque(int codigo, String nome, Integer CodigoDbarras, String Fornecedor){
+		
+					
+		
+	}
+}

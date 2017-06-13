@@ -1,0 +1,9 @@
+package controller;
+
+public class BuscaController {
+
+	
+	public void estoque(){
+		
+	}
+}

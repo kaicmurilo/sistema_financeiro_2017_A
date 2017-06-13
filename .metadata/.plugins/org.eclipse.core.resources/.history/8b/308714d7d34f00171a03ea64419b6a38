@@ -1,0 +1,64 @@
+package controller;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Produto;
+import model.TipoProduto;
+import repository.ConexaoFactory;
+
+public class BuscaController {
+	private Connection conexao = ConexaoFactory.criarConexao();
+	
+	public List<Produto> PosicaoEstoque(){
+		List<Produto> lista = new ArrayList<>();
+
+		try {			
+			String sql = "select * from tipo_produto order by id_produto";
+			PreparedStatement prepareStatement = conexao.prepareStatement(sql);
+			ResultSet result = prepareStatement.executeQuery();
+
+			while (result.next()) {
+				
+				int id_produto = result.getInt("id_produto");				
+				String descricao = result.getString("descricao");
+				 int codbarras;
+				 int id_fornercedor;
+				 double precocusto;
+				 double precovenda;
+				 double precominvenda;
+				 double precomaxvenda;
+				 double comissaovenda;
+				 double qtdestoque;
+				 double qtdminestoque;
+				 double altura;
+				 double peso;
+				 double largura;
+				 double profundidade;
+				 int id_medidaproduto;
+				 int id_tipoproduto;
+				 int id_funcionario;
+				 String validade;
+				TipoProduto tipo_Produto = new TipoProduto();
+				tipo_Produto.setDescricao(descricao);
+				tipo_Produto.setIdtipoproduto(id_tipoproduto);
+				
+
+				lista.add(tipo_Produto);
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return lista;
+					
+		
+	}
+}

@@ -1,0 +1,23 @@
+package controller;
+
+public class BuscaController {
+
+	
+	public void PosicaoEstoque(){
+		
+		switch (){
+		
+		case 1:
+			//filtrando por produto
+				
+			
+			
+			break;
+		
+		
+		
+		default:
+			
+		}
+	}
+}
